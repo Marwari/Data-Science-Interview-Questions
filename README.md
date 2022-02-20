@@ -1,12 +1,12 @@
-# Data-Science-Interview-Questions
+# Interview Questions
 Table of Contents
-- [Data-Science-Interview-Questions](#data-science-interview-questions)
+- [Interview Questions](#interview-questions)
 - [SQL](#sql)
 - [Python](#python)
 
 # SQL
 1. Write a query to retrive the list of Employees working in the same department?
-    ```
+    ``` SQL
     SELECT DISTINCT E1.EmpId, E1.EmpFName, E1.Department 
     FROM EmployeeInfo E1
     INNER JOIN
@@ -15,7 +15,7 @@ Table of Contents
     AND E1.EmpId != E2.EmpId
     ```
 2. Find the higest and lowest salary without using MIN, MAX, LIMIT, TOP, ROW_NUMBER, RANK, DENSE_RANK?
-   ```
+   ``` SQL
    -- Higest
     SELECT name,salary 
     From EmpSalary E1 
