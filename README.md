@@ -1,5 +1,5 @@
 # Data-Science-Interview-Questions
-TOC
+Table of Contents
 - [Data-Science-Interview-Questions](#data-science-interview-questions)
 - [SQL](#sql)
 - [Python](#python)
