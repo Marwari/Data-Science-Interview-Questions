@@ -21,7 +21,7 @@ Table of Contents
     -- Insert values
     INSERT INTO EmployeeInfo VALUES(
         1, 'Abram', 'HR', 12000),
-        (2, 'Kalin', 'Marketing'), 35000,
+        (2, 'Kalin', 'Marketing', 35000),
         (3, 'Jeetu', 'HR', 18000),
         (4, 'Pinky', 'Sales', 28000)
     
@@ -74,21 +74,21 @@ Table of Contents
     -- DROP TABLE travel;
 
     -- Create table
-    CREATE TABLE travel(
-    Name VARCHAR(20),
-    Flight_Date date);
+    CREATE TABLE TRAVEL(
+        NAME VARCHAR(20),
+        FLIGHT_DATE DATE);
 
     -- Insert values
     INSERT INTO travel VALUES ('Bharat', '2021-09-20');
-    INSERT INTO travel VALUES ('Peter', '2021-09-24');
-    INSERT INTO travel VALUES ('Bhalu', '2021-09-22');
-    INSERT INTO travel VALUES ('Bharat', '2021-09-28');
-    INSERT INTO travel VALUES ('Peter', '2021-09-25');
+        INSERT INTO travel VALUES ('Peter', '2021-09-24');
+        INSERT INTO travel VALUES ('Bhalu', '2021-09-22');
+        INSERT INTO travel VALUES ('Bharat', '2021-09-28');
+        INSERT INTO travel VALUES ('Peter', '2021-09-25');
 
     
 </details>
 
-   ```
+   ``` SQL
    -- Without Windows Function
    (SELECT A.NAME, A.FLIGHT_DATE, B.FLIGHT_DATE AS NEW_DATE
     FROM TRAVEL A INNER JOIN TRAVEL B
