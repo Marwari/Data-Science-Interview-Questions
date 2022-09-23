@@ -64,4 +64,50 @@ Table of Contents
    ```
     Here N is number. Example for 3rd higest salary, it'd be 3-1
 
+3. Find next flight date for user
+   <details>
+    <summary>
+    Setup DB -     <a href='https://sqliteonline.com/'>Online</a>
+    </summary>
+
+    -- drop table
+    -- DROP TABLE travel;
+
+    -- Create table
+    CREATE TABLE travel(
+    Name VARCHAR(20),
+    Flight_Date date);
+
+    -- Insert values
+    INSERT INTO travel VALUES ('Bharat', '2021-09-20');
+    INSERT INTO travel VALUES ('Peter', '2021-09-24');
+    INSERT INTO travel VALUES ('Bhalu', '2021-09-22');
+    INSERT INTO travel VALUES ('Bharat', '2021-09-28');
+    INSERT INTO travel VALUES ('Peter', '2021-09-25');
+
+    
+</details>
+
+   ```
+   -- Without Windows Function
+   (SELECT A.NAME, A.FLIGHT_DATE, B.FLIGHT_DATE AS NEW_DATE
+    FROM TRAVEL A INNER JOIN TRAVEL B
+    ON A.NAME=B.NAME
+    AND B.FLIGHT_DATE > A.FLIGHT_DATE
+    ORDER BY A.NAME)
+    UNION
+    SELECT NAME, FLIGHT_DATE, NULL AS NEW_DATE
+    FROM TRAVEL
+    WHERE NAME IN (
+    SELECT NAME FROM TRAVEL
+    GROUP BY NAME
+    HAVING COUNT(*)=1)
+
+    -- Using Windows Function
+    SELECT NAME, FLIGHT_DATE, 
+    LEAD(FLIGHT_DATE, 1) OVER(PARTITION BY NAME 
+	ORDER BY NAME) AS NEW_DATE
+    FROM TRAVEL
+   ```
+
 # Python
